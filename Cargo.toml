@@ -1,0 +1,16 @@
+[package]
+name = "cltools"
+version = "0.1.0"
+authors = ["Freddy Drennan <drennanfreddy@gmail.com>"]
+edition = "2018"
+license = "MIT"
+description = "CSV CLI Summary"
+readme = "README.md"
+homepage = "https://github.com/fdrennan/clitools"
+repository = "https://github.com/fdrennan/clitools"
+keywords = ["cli", "search", "demo"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
