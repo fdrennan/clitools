@@ -1,7 +1,6 @@
-
 /*use postgres::{Client, NoTls};*/
-use std::{env, fs, io};
 use dotenv;
+use std::{env, fs, io};
 
 fn print_dir() -> io::Result<()> {
     // Get File Path
@@ -19,7 +18,7 @@ fn print_dir() -> io::Result<()> {
         println!("{} {:?}", index, &x);
     }
 
-/*    let mut input_text = String::new();
+    /*    let mut input_text = String::new();
     io::stdin()
         .read_line(&mut input_text)
         .expect("failed to read from stdin");
@@ -74,8 +73,7 @@ fn print_dir() -> io::Result<()> {
 
 */
 
-fn read_dot_env()
-{
+fn read_dot_env() {
     dotenv::dotenv().expect("Failed to read .env file");
     let username = env::var("username").expect("username not found");
     let password = env::var("password").expect("password not found");
@@ -86,5 +84,4 @@ fn main() {
     let _blah = print_dir();
     /*build_table();*/
     read_dot_env();
-
 }
