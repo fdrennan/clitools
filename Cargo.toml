@@ -16,6 +16,7 @@ categories = ["command-line-utilities"]
 [dependencies]
 textwrap = "0.12"
 postgres = "0.17.0"
+dotenv = "0.15.0"
 
 [package.metadata.rpm]
 package = "cltools"

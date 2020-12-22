@@ -1,5 +1,7 @@
-use postgres::{Client, NoTls};
+
+/*use postgres::{Client, NoTls};*/
 use std::{env, fs, io};
+use dotenv;
 
 fn print_dir() -> io::Result<()> {
     // Get File Path
@@ -14,12 +16,23 @@ fn print_dir() -> io::Result<()> {
     let mut index = 0;
     for x in entries.iter() {
         index = index + 1;
-        println!("{} {:?}", index, x);
+        println!("{} {:?}", index, &x);
     }
+
+/*    let mut input_text = String::new();
+    io::stdin()
+        .read_line(&mut input_text)
+        .expect("failed to read from stdin");
+
+    let mut trimmed: i8 = input_text.parse().unwrap();
+    trimmed = trimmed - 1;
+    println!("asdfasdf {}", trimmed);*/
+    /*println!("You selected {:?} ", entries.get(trimmed));*/
     Ok(())
 }
 
-fn build_table() {
+/*fn build_table() {
+
     // POSTGRES
     let url = "postgresql://fdrennan:thirdday1@localhost:5432/postgres";
     let mut client = Client::connect(url, NoTls).unwrap();
@@ -58,7 +71,20 @@ fn build_table() {
     }
 }
 
+
+*/
+
+fn read_dot_env()
+{
+    dotenv::dotenv().expect("Failed to read .env file");
+    let username = env::var("username").expect("username not found");
+    let password = env::var("password").expect("password not found");
+    println!("\nThe password is {}", username);
+    println!("The username is {}", password);
+}
 fn main() {
     let _blah = print_dir();
-    build_table();
+    /*build_table();*/
+    read_dot_env();
+
 }
